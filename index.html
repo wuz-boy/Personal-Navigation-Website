@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人导航站 - 快速登录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 50px 16px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4361ee;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .category h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .site-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .site-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .site-card i {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .site-card span {
+            font-size: 0.95rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .login-card {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        }
+
+        .login-card:hover {
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-compass"></i> 我的个人导航站</h1>
+            <p>快速访问常用网站和登录平台</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索网站或应用...">
+                <i class="fas fa-search"></i>
+            </div>
+        </header>
+        
+        <main>
+            <div class="categories">
+                <div class="category">
+                    <h2><i class="fas fa-sign-in-alt"></i> 社交登录</h2>
+                    <div class="sites-grid">
+                        <a href="https://wx.qq.com/" target="_blank" class="site-card login-card" data-name="微信 wechat login">
+                            <i class="fab fa-weixin"></i>
+                            <span>微信登录</span>
+                        </a>
+                        <a href="https://web.qq.com/" target="_blank" class="site-card login-card" data-name="qq login">
+                            <i class="fab fa-qq"></i>
+                            <span>QQ登录</span>
+                        </a>
+                        <a href="https://weibo.com/login.php" target="_blank" class="site-card login-card" data-name="微博 weibo login">
+                            <i class="fab fa-weibo"></i>
+                            <span>微博登录</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2><i class="fas fa-code"></i> 开发工具</h2>
+                    <div class="sites-grid">
+                        <a href="https://deepseek.com" target="_blank" class="site-card" data-name="deepseek ai">
+                            <i class="fas fa-robot"></i>
+                            <span>DeepSeek</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="site-card" data-name="github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2><i class="fas fa-gamepad"></i> 社交娱乐</h2>
+                    <div class="sites-grid">
+                        <a href="https://bilibili.com" target="_blank" class="site-card" data-name="bilibili b站">
+                            <i class="fas fa-play-circle"></i>
+                            <span>哔哩哔哩</span>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="site-card" data-name="youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>个人导航网站 &copy; 2023 | 快速访问您喜爱的网站和平台</p>
+        </footer>
+    </div>
+
+    <script>
+        // 搜索功能
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            const siteCards = document.querySelectorAll('.site-card');
+            
+            siteCards.forEach(card => {
+                const siteName = card.getAttribute('data-name').toLowerCase();
+                if (siteName.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // 点击动画
+        document.querySelectorAll('.site-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
